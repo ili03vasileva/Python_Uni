@@ -1,0 +1,30 @@
+import sys
+
+def are_anagrams(str1, str2):
+
+    str1 = str1.lower().replace(" ", "")
+    str2 = str2.lower().replace(" ", "")
+    
+    if len(str1) != len(str2):
+        return False
+
+    count_str1 = {}
+    count_str2 = {}
+    
+    for char in str1:
+        count_str1[char] = count_str1.get(char, 0) + 1
+    
+
+    for char in str2:
+        count_str2[char] = count_str2.get(char, 0) + 1
+    
+
+    return count_str1 == count_str2
+
+if _name_ == "_main_":
+    if len(sys.argv) != 3:
+        print("Usage: python FXXXXX_L2_T2.py <string1> <string2>")
+    else:
+        string1 = sys.argv[1]
+        string2 = sys.argv[2]
+        print(are_anagrams(string1, string2))
