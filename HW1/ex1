@@ -1,1 +1,17 @@
 
+import sys
+def isSorted(listOfNumbers):
+    i = 1
+
+    while True:
+        if listOfNumbers[i] < listOfNumbers[i+1]:
+            return "sorted"
+        else:
+            return "unsorted"
+
+if len(sys.argv) < 2:
+    exit();
+else:
+    listOfNumbers = sys.argv[1: ]
+   
+    print(isSorted(listOfNumbers))
